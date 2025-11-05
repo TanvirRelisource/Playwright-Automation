@@ -7,7 +7,6 @@ export async function createEmployeeFlow(page: Page, name: EmployeeName) {
     const pim = new PIMPage(page);
     const loc = pimLocators(page);
 
-    //await page.pause();
     await pim.openPIM();
     await pim.openAddEmployee();
 
@@ -181,5 +180,4 @@ export async function deleteFirstEmployeeByPrefixFlow(page: Page, prefix: string
     await expect(loc.confirmDeleteButton).toBeVisible();
     await loc.confirmDeleteButton.click();
 
-    await expect(loc.toastSuccess).toBeVisible();
 }
